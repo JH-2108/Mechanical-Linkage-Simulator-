@@ -1,0 +1,23 @@
+{
+  "mechanism_name": "Crank-Slider Mechanism",
+  "description": "A mechanism that converts rotary motion of a crank into linear motion of a slider.",
+  
+  "links": [
+    { "name": "Ground", "length": 120, "fixed": true },
+    { "name": "Crank", "length": 40, "angle_deg": 0, "angular_velocity": 3.0 },
+    { "name": "ConnectingRod", "length": 80, "angle_deg": 45 },
+    { "name": "Slider", "type": "slider", "x": 120, "y": 0 }
+  ],
+
+  "joints": [
+    { "name": "A", "x": 0, "y": 0, "fixed": true },
+    { "name": "B", "connects": ["Ground", "Crank"] },
+    { "name": "C", "connects": ["Crank", "ConnectingRod"] },
+    { "name": "D", "connects": ["ConnectingRod", "Slider"] }
+  ],
+
+  "simulation": {
+    "time_step": 0.05,
+    "duration": 10
+  }
+}
