@@ -1,21 +1,18 @@
 {
   "mechanism_name": "Four-Bar Linkage",
-  "description": "A basic four-bar mechanism that converts rotary motion into oscillatory motion.",
-  
+  "description": "A four-bar mechanism converting rotary motion to oscillatory motion.",
   "links": [
     { "name": "Ground", "length": 100, "fixed": true },
     { "name": "Crank", "length": 50, "angle_deg": 0, "angular_velocity": 2.0 },
     { "name": "Coupler", "length": 80, "angle_deg": 30 },
     { "name": "Rocker", "length": 70, "angle_deg": 90 }
   ],
-  
   "joints": [
     { "name": "A", "x": 0, "y": 0, "fixed": true },
     { "name": "B", "connects": ["Ground", "Crank"] },
     { "name": "C", "connects": ["Crank", "Coupler"] },
     { "name": "D", "connects": ["Coupler", "Rocker", "Ground"] }
   ],
-
   "simulation": {
     "time_step": 0.05,
     "duration": 10
